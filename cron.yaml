@@ -2,8 +2,8 @@ cron:
 - description: HN web extraction
   url: /etl_process
   target: etl-dm
-  schedule: every 5 minutes from 00:00 to 11:59
+  schedule: every 10 minutes from 00:00 to 11:59
 - description: HN web extraction
   url: /etl_process
-  schedule: every 5 minutes from 12:00 to 23:59
+  schedule: every 10 minutes from 12:00 to 23:59
 
