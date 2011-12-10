@@ -1,0 +1,11 @@
+application: hnnoise
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /etl_process
+  script: 1_etl.etl
+  login: admin
+

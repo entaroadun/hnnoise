@@ -1,0 +1,6 @@
+cron:
+- description: HN web extraction
+  url: /etl_process
+  target: etl-dm
+  schedule: every 5 minutes
+

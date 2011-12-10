@@ -1,0 +1,6 @@
+backends:
+- name: etl-dm
+  class: B1
+  instances: 1
+  options: dynamic
+
