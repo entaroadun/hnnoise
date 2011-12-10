@@ -22,7 +22,7 @@ class HNNOISE(db.Model):
   etime = db.IntegerProperty()
   stories_score = db.FloatProperty()
   stories_n = db.IntegerProperty()
-  stories_json = db.StringProperty()
+  stories_json = db.TextProperty()
 
 ## ====================================
 ## == Do the magic (ideally we would get
@@ -94,7 +94,8 @@ class ETLPage(webapp2.RequestHandler):
       stories_json += ']'
       debug_info += stories_json
       etime_now = int(time.time()*1000)
-      hnnoise = HNNOISE(etime=etime_now,stories_score=float(stories_score)/float(stories_n),stories_n=stories_n,stories_json=stories_json)
+      hnnoise = HNNOISE(etime=etime_now,stories_score=float(stories_score)/float(stories_n),stories_n=stories_n,stories_json=db.Text(stories_json,encoding="utf-8"))
+      hnnoise.put()
 ## ---------------------------
 ## -- Did we get it right?
     self.response.headers['Content-Type'] = 'text/plain'
